@@ -179,7 +179,6 @@
             for (let item in cart) { itemsList.push(`${index}. ${item} - Qty: ${cart[item].qty}`); index++; }
             let msg = `*🔴 NEW ORDER - MORPANKH CAFE & RESTRO*\n----------------------------------------\n👤 *Customer Name:* ${name}\n📌 Type: *${type}*\n🪑 ${detail}\n💳 *Payment Mode:* ${payMethod}\n----------------------------------------\n\n${itemsList.join("\n")}\n\n----------------------------------------\n💰 *TOTAL BILL: ₹${total}*\n----------------------------------------\n\nKripya order confirm karein! 🙏`;
             window.open("https://wa.me/917014808515?text=" + encodeURIComponent(msg));
-            window.open("https://wa.me/919928427598?text=" + encodeURIComponent(msg));
             alert("Order Confirmed! 👍\nAapka order humein mil gaya hai."); 
         }
     </script>
