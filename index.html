@@ -3,246 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morpankh Cafe & Restro | Premium Menu</title>
+    <title>Morpankh Cafe & Restro</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
         body { background-color: #121212; color: #f4f4f4; padding-bottom: 140px; }
-        header { background: linear-gradient(135deg, #1a1a1a, #0a0a0a); padding: 30px 20px; text-align: center; border-bottom: 3px solid #d4af37; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .logo { font-size: 45px; margin-bottom: 5px; filter: drop-shadow(0px 0px 8px #d4af37); }
-        header h1 { font-family: 'Cinzel', serif; font-size: 26px; color: #d4af37; letter-spacing: 2px; margin-bottom: 8px; }
-        .owner-info { font-size: 13px; color: #ccc; line-height: 1.6; font-weight: 400; }
-        .owner-info strong { color: #d4af37; }
+        header { background: linear-gradient(135deg, #1a1a1a, #0a0a0a); padding: 30px 20px; text-align: center; border-bottom: 3px solid #d4af37; }
+        h1 { font-family: 'Cinzel', serif; color: #d4af37; font-size: 24px; }
+        .owner-info { font-size: 13px; color: #ccc; margin-top: 10px; line-height: 1.6; }
         .container { max-width: 500px; margin: 20px auto; padding: 0 15px; }
-        
-        /* Service Box */
-        .service-box { background: linear-gradient(135deg, #1e1e1e, #151515); padding: 20px 15px; border-radius: 16px; text-align: center; margin-bottom: 25px; border: 1px solid rgba(212, 183, 55, 0.5); }
-        .service-box h2 { font-family: 'Cinzel', serif; color: #d4af37; font-size: 16px; margin-bottom: 12px; }
-        .service-options { display: flex; justify-content: center; gap: 12px; margin-bottom: 15px; flex-wrap: wrap; }
-        .service-lbl { background: #252525; padding: 10px 16px; border-radius: 10px; font-size: 13px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; }
-        .service-lbl:has(input:checked) { background: rgba(212, 183, 55, 0.15); border-color: #d4af37; color: #d4af37; }
-        .input-field { width: 100%; max-width: 320px; padding: 11px 12px; background: #252525; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; text-align: center; margin: 8px auto 0 auto; display: block; font-size: 14px; }
-        
-        /* Clickable Category Button */
-        .main-category { 
-            background: linear-gradient(90deg, #aa841b, #d4af37); 
-            color: #121212; 
-            font-family: 'Cinzel', serif; 
-            font-size: 16px; 
-            font-weight: bold;
-            padding: 14px; 
-            margin: 12px 0; 
-            border-radius: 10px; 
-            text-align: left; 
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .main-category::after { content: '➕'; font-size: 12px; }
-        .main-category.active::after { content: '➖'; }
-
-        /* Items Container */
-        .category-content { display: none; padding: 5px 0; }
-        
-        /* Food Cards */
-        .food-card { background: #1e1e1e; border-radius: 16px; margin-bottom: 12px; display: flex; align-items: center; padding: 12px; border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 4px 10px rgba(0,0,0,0.2); position: relative; }
-        .food-img { width: 55px; height: 55px; font-size: 28px; display: flex; align-items: center; justify-content: center; background: #252525; border-radius: 10px; }
-        .food-info { padding-left: 15px; flex: 1; }
-        .food-title { font-size: 14px; font-weight: 600; color: #fff; padding-right: 80px; }
-        .price { color: #d4af37; font-weight: 700; display: block; margin-top: 4px; font-size: 15px; }
-        .add-btn { position: absolute; right: 12px; bottom: 12px; background: linear-gradient(135deg, #d4af37, #aa841b); color: #121212; border: none; padding: 6px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 12px; }
-        
-        /* Bottom Cart Bar */
-        .cart-bar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 500px; background: #1a1a1a; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; border-top: 2px solid #d4af37; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.5); z-index: 999; }
-        .cart-text { font-size: 14px; color: #fff; }
-        .order-btn { background: linear-gradient(135deg, #d4af37, #aa841b); color: #121212; padding: 10px 22px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; }
+        .service-box { background: #1e1e1e; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #d4af37; }
+        .input-field { width: 100%; padding: 10px; margin-top: 10px; background: #252525; border: 1px solid #444; color: white; border-radius: 5px; }
+        .cat-title { color: #d4af37; font-size: 18px; margin: 15px 0 10px; font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .food-card { background: #1e1e1e; padding: 12px; margin-bottom: 8px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #333; }
+        .add-btn { background: #d4af37; color: #000; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        .cart-bar { position: fixed; bottom: 0; width: 100%; max-width: 500px; left: 50%; transform: translateX(-50%); background: #1a1a1a; padding: 15px; text-align: center; border-top: 2px solid #d4af37; z-index: 1000; }
+        .pay-box { background: #252525; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; border: 1px solid #d4af37; }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">🦚</div>
         <h1>Morpankh Cafe & Restro</h1>
         <div class="owner-info">
-            👤 <strong>Owner:</strong> Kishan Asopa <br>
-            📞 <strong>Call:</strong> 7014808515, 9928427598 <br>
-            📍 <strong>Address:</strong> Karant Balaji Market, Girls School ke samne, Napasar
+            👤 Owner: Kishan Asopa<br>
+            📞 7014808515, 9928427598<br>
+            📍 Karant Balaji Market, Girls School ke samne, Napasar 334201
         </div>
     </header>
+
     <div class="container">
-        <!-- Order Type & Customer Details Selection -->
+        <!-- Naya Online Payment Section -->
+        <div class="pay-box">
+            <p>⚡ <b>Pehle Online Payment karein</b></p>
+            <a href="upi://pay?pa=7014808515@ybl&pn=Kishan%20Asopa&cu=INR" style="background:#d4af37; color:#000; padding:10px 20px; display:inline-block; margin-top:10px; text-decoration:none; border-radius:5px; font-weight:bold;">Pay Now (PhonePe/UPI)</a>
+        </div>
+
         <div class="service-box">
-            <h2>🍽️ Order Details / ऑर्डर की जानकारी</h2>
-            
-            <!-- Customer Name -->
-            <input type="text" id="custName" class="input-field" placeholder="अपना नाम लिखें (Your Name)" required style="margin-bottom: 15px; border-color: rgba(212, 183, 55, 0.4);">
-            
-            <!-- Order Type -->
-            <div class="service-options">
-                <label class="service-lbl"><input type="radio" name="type" onclick="show('dine')" checked> Dine-In (टेबल)</label>
-                <label class="service-lbl"><input type="radio" name="type" onclick="show('del')"> Delivery (घर पर)</label>
-            </div>
-            
-            <input type="number" id="dine" class="input-field" placeholder="अपना टेबल नंबर डालें (e.g. 3)" style="display:block">
-            <input type="text" id="del" class="input-field" placeholder="अपना पूरा पता लिखें (Address)" style="display:none">
-            
-            <!-- Payment Method Select -->
-            <h2 style="margin-top: 20px; margin-bottom: 10px;">💵 Payment Mode / भुगतान का तरीका</h2>
-            <div class="service-options">
-                <label class="service-lbl"><input type="radio" name="pay" value="Cash / काउंटर पर नगद" checked> Cash (नगद)</label>
-                <label class="service-lbl"><input type="radio" name="pay" value="Online UPI / PhonePe / Paytm"> Online UPI</label>
-            </div>
+            <input type="text" id="custName" class="input-field" placeholder="अपना नाम लिखें">
+            <input type="text" id="address" class="input-field" placeholder="पता / टेबल नंबर">
         </div>
 
-        <!-- 1. PIZZA -->
-        <div class="main-category" onclick="toggleCategory(this)">🍕 PIZZA / पिज्जा</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🍕</div><div class="food-info"><div class="food-title">Veg Pizza (वेज पिज्जा)</div><span class="price">₹170</span><button class="add-btn" onclick="add('Veg Pizza (वेज पिज्जा)', 170)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧅</div><div class="food-info"><div class="food-title">Onion Pizza (ऑनियन पिज्जा)</div><span class="price">₹150</span><button class="add-btn" onclick="add('Onion Pizza (ऑनियन पिज्जा)', 150)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧀</div><div class="food-info"><div class="food-title">Paneer Cheese Pizza (पनीर चीज पिज्जा)</div><span class="price">₹230</span><button class="add-btn" onclick="add('Paneer Cheese Pizza (पनीर चीज पिज्जा)', 230)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🫑</div><div class="food-info"><div class="food-title">Onion Capsicum Pizza</div><span class="price">₹200</span><button class="add-btn" onclick="add('Onion Capsicum Pizza', 200)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🌽</div><div class="food-info"><div class="food-title">Baby Corn Pizza (बेबी कार्न पिज्जा)</div><span class="price">₹210</span><button class="add-btn" onclick="add('Baby Corn Pizza (बेबी कार्न पिज्जा)', 210)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🌶️</div><div class="food-info"><div class="food-title">Masala Pizza (मसाला पिज्जा)</div><span class="price">₹200</span><button class="add-btn" onclick="add('Masala Pizza (मसाला पिज्जा)', 200)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍅</div><div class="food-info"><div class="food-title">Tomato Pizza (टमाटर पिज्जा)</div><span class="price">₹190</span><button class="add-btn" onclick="add('Tomato Pizza (टमाटर पिज्जा)', 190)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🦚</div><div class="food-info"><div class="food-title">Morpankh Pizza (मोरपंख पिज्जा)</div><span class="price">₹350</span><button class="add-btn" onclick="add('Morpankh Pizza (मोरपंख पिज्जा)', 350)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">➕</div><div class="food-info"><div class="food-title">Extra Cheese (एक्स्ट्रा चीज)</div><span class="price">₹70</span><button class="add-btn" onclick="add('Extra Cheese (एक्स्ट्रा चीज)', 70)">Add</button></div></div>
-        </div>
+        <!-- Menu Items -->
+        <div class="cat-title">🍕 PIZZA</div>
+        <div class="food-card">Veg Pizza - ₹170 <button class="add-btn" onclick="add('Veg Pizza', 170)">Add</button></div>
+        <div class="food-card">Onion Pizza - ₹150 <button class="add-btn" onclick="add('Onion Pizza', 150)">Add</button></div>
+        
+        <div class="cat-title">🍔 BURGER</div>
+        <div class="food-card">Veg Burger - ₹50 <button class="add-btn" onclick="add('Veg Burger', 50)">Add</button></div>
+        <div class="food-card">Cheese Burger - ₹80 <button class="add-btn" onclick="add('Cheese Burger', 80)">Add</button></div>
 
-        <!-- 2. BURGER -->
-        <div class="main-category" onclick="toggleCategory(this)">🍔 BURGER / बर्गर</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🍔</div><div class="food-info"><div class="food-title">Veg Burger (वेज बर्गर)</div><span class="price">₹50</span><button class="add-btn" onclick="add('Veg Burger (वेज बर्गर)', 50)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">👑</div><div class="food-info"><div class="food-title">Paneer Cheese Burger (पनीर चीज बर्गर)</div><span class="price">₹100</span><button class="add-btn" onclick="add('Paneer Cheese Burger (पनीर चीज बर्गर)', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧀</div><div class="food-info"><div class="food-title">Cheese Burger (चीज बर्गर)</div><span class="price">₹80</span><button class="add-btn" onclick="add('Cheese Burger (चीज बर्गर)', 80)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🌶️</div><div class="food-info"><div class="food-title">Masala Burger (मसाला बर्गर)</div><span class="price">₹70</span><button class="add-btn" onclick="add('Masala Burger (मसाला बर्गर)', 70)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">💥</div><div class="food-info"><div class="food-title">Double Tikki Burger (डबल टिक्की बर्गर)</div><span class="price">₹150</span><button class="add-btn" onclick="add('Double Tikki Burger (डबल टिक्की बर्गर)', 150)">Add</button></div></div>
-        </div>
+        <div class="cat-title">🥪 SANDWICH</div>
+        <div class="food-card">Veg Sandwich - ₹100 <button class="add-btn" onclick="add('Veg Sandwich', 100)">Add</button></div>
+        <div class="food-card">Cheese Sandwich - ₹120 <button class="add-btn" onclick="add('Cheese Sandwich', 120)">Add</button></div>
 
-        <!-- 3. SANDWICH -->
-        <div class="main-category" onclick="toggleCategory(this)">🥪 SANDWICH / सैंडविच</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🥪</div><div class="food-info"><div class="food-title">Veg Sandwich (वेज सैंडविच)</div><span class="price">₹100</span><button class="add-btn" onclick="add('Veg Sandwich (वेज सैंडविच)', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧀</div><div class="food-info"><div class="food-title">Cheese Sandwich (चीज सैंडविच)</div><span class="price">₹120</span><button class="add-btn" onclick="add('Cheese Sandwich (चीज सैंडविच)', 120)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">👑</div><div class="food-info"><div class="food-title">Paneer Cheese Sandwich</div><span class="price">₹140</span><button class="add-btn" onclick="add('Paneer Cheese Sandwich', 140)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍫</div><div class="food-info"><div class="food-title">Chocolate Sandwich (चॉकलेट सैंडविच)</div><span class="price">₹150</span><button class="add-btn" onclick="add('Chocolate Sandwich (चॉकलेट सैंडविच)', 150)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🔥</div><div class="food-info"><div class="food-title">Masala Sandwich (मसाला सैंडविच)</div><span class="price">₹100</span><button class="add-btn" onclick="add('Masala Sandwich (मसाला सैंडविच)', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🤩</div><div class="food-info"><div class="food-title">Paneer Masala Cheese Sandwich</div><span class="price">₹180</span><button class="add-btn" onclick="add('Paneer Masala Cheese Sandwich', 180)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍕</div><div class="food-info"><div class="food-title">Pizza Sandwich (पिज्जा सैंडविच)</div><span class="price">₹180</span><button class="add-btn" onclick="add('Pizza Sandwich (पिज्जा सैंडविच)', 180)">Add</button></div></div>
-        </div>
+        <div class="cat-title">🍟 FRENCH FRIES</div>
+        <div class="food-card">French Fries - ₹80 <button class="add-btn" onclick="add('French Fries', 80)">Add</button></div>
 
-        <!-- 4. FRENCH FRIES -->
-        <div class="main-category" onclick="toggleCategory(this)">🍟 FRENCH FRIES / फ्रेंच फ्राई</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🍟</div><div class="food-info"><div class="food-title">French Fries (Full)</div><span class="price">₹80</span><button class="add-btn" onclick="add('French Fries Full', 80)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍿</div><div class="food-info"><div class="food-title">French Fries (Half)</div><span class="price">₹60</span><button class="add-btn" onclick="add('French Fries Half', 60)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🌶️</div><div class="food-info"><div class="food-title">Masala Fries (Full)</div><span class="price">₹120</span><button class="add-btn" onclick="add('Masala Fries Full', 120)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">⚡</div><div class="food-info"><div class="food-title">Masala Fries (Half)</div><span class="price">₹80</span><button class="add-btn" onclick="add('Masala Fries Half', 80)">Add</button></div></div>
-        </div>
+        <div class="cat-title">🍞 PAV BHAJI</div>
+        <div class="food-card">Pav Bhaji - ₹80 <button class="add-btn" onclick="add('Pav Bhaji', 80)">Add</button></div>
 
-        <!-- 5. PAV BHAJI -->
-        <div class="main-category" onclick="toggleCategory(this)">🍞 PAV BHAJI / पावभाजी</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🔥</div><div class="food-info"><div class="food-title">Masala Pav Bhaji (मसाला पावभाजी)</div><span class="price">₹100</span><button class="add-btn" onclick="add('Masala Pav Bhaji (मसाला पावभाजी)', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍛</div><div class="food-info"><div class="food-title">Pav Bhaji (पावभाजी)</div><span class="price">₹80</span><button class="add-btn" onclick="add('Pav Bhaji (पावभाजी)', 80)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍞</div><div class="food-info"><div class="food-title">Extra Pav (एक्स्ट्रा पाव)</div><span class="price">₹20</span><button class="add-btn" onclick="add('Extra Pav (एक्स्ट्रा पाव)', 20)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🥣</div><div class="food-info"><div class="food-title">Extra Bhaji (एक्स्ट्रा भाजी)</div><span class="price">₹30</span><button class="add-btn" onclick="add('Extra Bhaji (एक्स्ट्रा भाजी)', 30)">Add</button></div></div>
-        </div>
+        <div class="cat-title">🍜 NOODLES</div>
+        <div class="food-card">Veg Chowmein - ₹60 <button class="add-btn" onclick="add('Veg Chowmein', 60)">Add</button></div>
+        <div class="food-card">Paneer Chowmein - ₹100 <button class="add-btn" onclick="add('Paneer Chowmein', 100)">Add</button></div>
 
-        <!-- 6. NOODLES -->
-        <div class="main-category" onclick="toggleCategory(this)">🍜 NOODLES / चाऊमीन</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🍜</div><div class="food-info"><div class="food-title">Veg Chowmein (वेज चाऊमीन)</div><span class="price">₹60</span><button class="add-btn" onclick="add('Veg Chowmein (वेज चाऊमीन)', 60)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧄</div><div class="food-info"><div class="food-title">Garlic Chowmein (गार्लिक चाऊमीन)</div><span class="price">₹80</span><button class="add-btn" onclick="add('Garlic Chowmein (गार्लिक चाऊमीन)', 80)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🔥</div><div class="food-info"><div class="food-title">Schezwan Chowmein (सेजवान चाऊमीन)</div><span class="price">₹90</span><button class="add-btn" onclick="add('Schezwan Chowmein (सेजवान चाऊमीन)', 90)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧀</div><div class="food-info"><div class="food-title">Paneer Chowmein (पनीर चाऊमीन)</div><span class="price">₹100</span><button class="add-btn" onclick="add('Paneer Chowmein (पनीर चाऊमीन)', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍱</div><div class="food-info"><div class="food-title">Chowmein Manchurian</div><span class="price">₹100</span><button class="add-btn" onclick="add('Chowmein Manchurian', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🦚</div><div class="food-info"><div class="food-title">Morpankh Chowmein (मोरपंख चाऊमीन)</div><span class="price">₹150</span><button class="add-btn" onclick="add('Morpankh Chowmein (मोरपंख चाऊमीन)', 150)">Add</button></div></div>
-        </div>
+        <div class="cat-title">🧆 MANCHURIAN</div>
+        <div class="food-card">Dry Manchurian - ₹90 <button class="add-btn" onclick="add('Dry Manchurian', 90)">Add</button></div>
 
-        <!-- 7. MANCHURIAN -->
-        <div class="main-category" onclick="toggleCategory(this)">🧆 MANCHURIAN / मन्चुरियन</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🧆</div><div class="food-info"><div class="food-title">Dry Manchurian (ड्राई मन्चुरियन)</div><span class="price">₹90</span><button class="add-btn" onclick="add('Dry Manchurian (ड्राई मन्चुरियन)', 90)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🥣</div><div class="food-info"><div class="food-title">Gravy Manchurian (ग्रेवी मन्चुरियन)</div><span class="price">₹110</span><button class="add-btn" onclick="add('Gravy Manchurian (ग्रेवी मन्चुरियन)', 110)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧀</div><div class="food-info"><div class="food-title">Paneer Manchurian (पनीर मन्चुरियन)</div><span class="price">₹150</span><button class="add-btn" onclick="add('Paneer Manchurian (पनीर मन्चुरियन)', 150)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍜</div><div class="food-info"><div class="food-title">Manchurian Chowmein</div><span class="price">₹100</span><button class="add-btn" onclick="add('Manchurian Chowmein', 100)">Add</button></div></div>
-        </div>
-
-        <!-- 8. DOSA -->
-        <div class="main-category" onclick="toggleCategory(this)">🥞 DOSA / डोसा</div>
-        <div class="category-content">
-            <div class="food-card"><div class="food-img">🌯</div><div class="food-info"><div class="food-title">Masala Dosa (मसाला डोसा)</div><span class="price">₹100</span><button class="add-btn" onclick="add('Masala Dosa (मसाला डोसा)', 100)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🥞</div><div class="food-info"><div class="food-title">Plain Dosa (प्लेन डोसा)</div><span class="price">₹80</span><button class="add-btn" onclick="add('Plain Dosa (प्लेन डोसा)', 80)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">👑</div><div class="food-info"><div class="food-title">Paneer Masala Dosa</div><span class="price">₹130</span><button class="add-btn" onclick="add('Paneer Masala Dosa', 130)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🧀</div><div class="food-info"><div class="food-title">Cheese Masala Dosa (चीज मसाला डोसा)</div><span class="price">₹140</span><button class="add-btn" onclick="add('Cheese Masala Dosa (चीज मसाला डोसा)', 140)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🍕</div><div class="food-info"><div class="food-title">Pizza Dosa (पिज्जा डोसा)</div><span class="price">₹200</span><button class="add-btn" onclick="add('Pizza Dosa (पिज्जा डोसा)', 200)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🎵</div><div class="food-info"><div class="food-title">Sargam Dosa (सरगम डोसा)</div><span class="price">₹250</span><button class="add-btn" onclick="add('Sargam Dosa (सरगम डोसा)', 250)">Add</button></div></div>
-            <div class="food-card"><div class="food-img">🦚</div><div class="food-info"><div class="food-title">Morpankh Dosa (मोरपंख डोसा)</div><span class="price">₹399</span><button class="add-btn" onclick="add('Morpankh Dosa (मोरपंख डोसा)', 399)">Add</button></div></div>
-        </div>
+        <div class="cat-title">🥞 DOSA</div>
+        <div class="food-card">Masala Dosa - ₹100 <button class="add-btn" onclick="add('Masala Dosa', 100)">Add</button></div>
+        <div class="food-card">Morpankh Dosa - ₹399 <button class="add-btn" onclick="add('Morpankh Dosa', 399)">Add</button></div>
     </div>
 
-    <!-- Bottom Fixed Bar -->
     <div class="cart-bar">
-        <div class="cart-text">Total Items: <span id="count">0</span> | Bill: <span style="color:#d4af37; font-weight:bold;">₹<span id="total">0</span></span></div>
-        <button class="order-btn" onclick="order()">Place Order ➔</button>
+        <div>Total: ₹<span id="total">0</span></div>
+        <button class="add-btn" style="width: 100%; margin-top: 10px;" onclick="sendOrder()">Place Order</button>
     </div>
 
     <script>
-        let cart = {}, total = 0, itemCount = 0;
-
-        function toggleCategory(element) {
-            element.classList.toggle("active");
-            let content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
-
-        function show(id) { 
-            document.getElementById('dine').style.display = id=='dine'?'block':'none'; 
-            document.getElementById('del').style.display = id=='del'?'block':'none'; 
-        }
-
-        function add(n, p) { 
-            if(cart[n]) {
-                cart[n].qty += 1;
-            } else {
-                cart[n] = { price: p, qty: 1 };
-            }
-            total += p; 
-            itemCount += 1;
-            document.getElementById('count').innerText = itemCount;
-            document.getElementById('total').innerText = total; 
-        }
-
-        function order() { 
-            let name = document.getElementById('custName').value.trim();
-            if(!name) { alert("Kripya pehle apna Naam dalein!"); return; }
-            if(itemCount === 0) { alert("Kripya item add karein!"); return; }
-            
-            let type = document.getElementById('dine').style.display === 'block' ? 'Dine-In / Table' : 'Home Delivery';
-            let detail = type === 'Dine-In / Table' ? '📍 Table Number: ' + document.getElementById('dine').value : '📍 Address: ' + document.getElementById('del').value;
-            
-            let payMethod = document.querySelector('input[name="pay"]:checked').value;
-            
-            let itemsList = [];
-            let index = 1;
-            for (let item in cart) {
-                itemsList.push(`${index}. ${item} - Qty: ${cart[item].qty}`);
-                index++;
-            }
-            
-            let msg = `*🔴 NEW ORDER - MORPANKH CAFE & RESTRO*\n----------------------------------------\n👤 *Customer Name:* ${name}\n📌 Type: *${type}*\n🪑 ${detail}\n💳 *Payment Mode:* ${payMethod}\n----------------------------------------\n\n${itemsList.join("\n")}\n\n----------------------------------------\n💰 *TOTAL BILL: ₹${total}*\n----------------------------------------\n\nKripya order confirm karein! 🙏`;
-            
-            // Bina option puche dono numbers par ek saath background me message open karega
+        let total = 0, items = [];
+        function add(n, p) { total += p; items.push(n); document.getElementById('total').innerText = total; }
+        function sendOrder() {
+            let name = document.getElementById('custName').value;
+            let addr = document.getElementById('address').value;
+            if(!name || items.length == 0) { alert("Naam aur Item bharein!"); return; }
+            let msg = "Order: " + items.join(", ") + "\nTotal: ₹" + total + "\nName: " + name + "\nAddress: " + addr + "\n\nPayment: Online done (Prepaid)";
             window.open("https://wa.me/917014808515?text=" + encodeURIComponent(msg));
             window.open("https://wa.me/919928427598?text=" + encodeURIComponent(msg));
-            
-            // Customer ko confirmation dikhayega
-            alert("Order Confirmed! 👍\nAapka order humein mil gaya hai."); 
+            alert("Order Confirmed! 👍 Aapka order humein mil gaya hai.");
         }
     </script>
 </body>
