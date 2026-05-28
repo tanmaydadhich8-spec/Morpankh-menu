@@ -1,626 +1,336 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morpankh Cafe & Restro</title>
+export default function AMTNARWebsite() {
+  const companies = [
+    "Fischer",
+    "Bruker",
+    "Quantum",
+    "NeoAlfa",
+    "Gold Star",
+    "Gold Mexx",
+    "Dolfin",
+  ];
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  const services = [
+    "XRF Calibration",
+    "Laser Soldering Repair",
+    "Parts Repair",
+    "Machine Installation",
+    "AMC Support",
+    "Remote Support",
+    "All India Service",
+    "Engineer Network",
+  ];
 
-<style>
+  const engineerBenefits = [
+    "Location Based Leads",
+    "Engineer Profiles",
+    "Job Requests",
+    "Direct Customer Contact",
+    "Commission System",
+    "Technical Support",
+    "Training & Updates",
+    "All India Network",
+  ];
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+  const machineMarketplace = [
+    "New XRF Machines",
+    "Old XRF Machines",
+    "Laser Machines",
+    "Machine Parts",
+    "Buy & Sell Leads",
+    "Dealer Network",
+    "Inspection Reports",
+    "Warranty Support",
+  ];
+
+  const engineers = [
+  {
+    name: "Rahul Sharma",
+    city: "Delhi",
+    experience: "5 Years",
+    brands: ["Fischer", "Bruker", "Gold Mexx"],
+    services: ["Calibration", "Parts Repair", "Laser Repair"],
+  },
+  {
+    name: "Sunil Verma",
+    city: "Jaipur",
+    experience: "7 Years",
+    brands: ["NeoAlfa", "Quantum"],
+    services: ["AMC", "Machine Installation"],
+  },
+  {
+    name: "Amit Kumar",
+    city: "Mumbai",
+    experience: "4 Years",
+    brands: ["Dolfin", "Gold Star"],
+    services: ["XRF Repair", "Remote Support"],
+  },
+];
+
+  const adminFeatures = [
+    "Customer Management",
+    "Engineer Management",
+    "Lead Distribution",
+    "Service Tracking",
+    "Complaint System",
+    "Invoice Records",
+    "WhatsApp Support",
+    "Machine History",
+    "Engineer Approval System",
+    "Commission Management",
+    "Live Notifications",
+    "Machine Listing Approval",
+  ];
+
+  const futureFeatures = [
+    "Engineer Login Dashboard",
+    "Customer Complaint Portal",
+    "Nearby Engineer Finder",
+    "Live Service Tracking",
+    "Push Notifications",
+    "Machine Image Upload",
+    "Multi Language Support",
+    "Android APK System",
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-900">
+      {/* Hero */}
+      <section className="bg-black text-white py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-5xl font-bold">
+            AMTNAR Global Auto & Digital
+          </h1>
+
+          <p className="mt-6 text-lg text-gray-300 max-w-3xl mx-auto">
+            All India XRF Machine Calibration, Laser Soldering Repair,
+            Parts Repair & Technical Support Platform.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+            <button className="bg-yellow-500 text-black px-6 py-3 rounded-2xl font-semibold">
+              Contact Now
+            </button>
+
+            <button className="border border-white px-6 py-3 rounded-2xl">
+              Join As Engineer
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold">Our Services</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-3xl shadow-lg"
+            >
+              <div className="text-4xl mb-4">⚙️</div>
+              <h3 className="font-semibold text-lg">{service}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Brands */}
+      <section className="bg-white py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold">Brands We Service</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+            {companies.map((company, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-2xl p-6 shadow font-semibold"
+              >
+                {company}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engineer Network */}
+      <section className="py-16 px-6 bg-black text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">Engineer Partner Network</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {engineerBenefits.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/10 rounded-3xl p-6"
+              >
+                <div className="text-4xl mb-4">🛠️</div>
+                <h3 className="font-semibold text-lg">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engineer Directory */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">Engineer Directory</h2>
+            <p className="text-gray-600 mt-4">
+              Find engineers according to machine brands & services.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {engineers.map((engineer, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-3xl p-6 shadow-lg"
+              >
+                <div className="text-5xl mb-4">👨‍🔧</div>
+
+                <h3 className="text-2xl font-bold mb-3">
+                  {engineer.name}
+                </h3>
+
+                <p className="mb-2">
+                  <strong>City:</strong> {engineer.city}
+                </p>
+
+                <p className="mb-4">
+                  <strong>Experience:</strong> {engineer.experience}
+                </p>
+
+                <div className="mb-4">
+                  <h4 className="font-semibold mb-2">Machine Brands</h4>
+
+                  <div className="flex flex-wrap gap-2">
+                    {engineer.brands.map((brand, i) => (
+                      <span
+                        key={i}
+                        className="bg-black text-white px-3 py-1 rounded-full text-sm"
+                      >
+                        {brand}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold mb-2">Services</h4>
+
+                  <div className="flex flex-wrap gap-2">
+                    {engineer.services.map((service, i) => (
+                      <span
+                        key={i}
+                        className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <button className="w-full bg-black text-white py-3 rounded-2xl font-semibold hover:bg-gray-800">
+                  Contact Engineer
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Marketplace */}
+      <section className="py-16 px-6 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">
+              Machine Buy & Sell Marketplace
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {machineMarketplace.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-6 shadow-lg"
+              >
+                <div className="text-4xl mb-4">🏭</div>
+                <h3 className="font-semibold text-lg">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Admin Panel */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">Admin Panel</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {adminFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-3xl p-6 shadow-lg"
+              >
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="font-semibold text-lg">{feature}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Future Features */}
+      <section className="py-16 px-6 bg-black text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold">Future Platform Features</h2>
+            <p className="text-gray-300 mt-4">
+              Advanced systems for engineers, customers & marketplace management.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {futureFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white/10 rounded-3xl p-6 shadow-lg"
+              >
+                <div className="text-4xl mb-4">🚀</div>
+                <h3 className="font-semibold text-lg">{feature}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto bg-yellow-500 rounded-3xl p-10 text-center shadow-2xl">
+          <h2 className="text-4xl font-bold text-black">
+            Need XRF Machine Service?
+          </h2>
+
+          <p className="mt-4 text-black text-lg">
+            Contact us for calibration, repair & machine support.
+          </p>
+
+          <div className="mt-8 text-xl font-bold text-black space-y-2">
+            <div>📞 +91 7688990096</div>
+            <div>🌐 www.sampark.online</div>
+            <div>📍 All India Service Available</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
-
-body{
-background:#0f0f0f;
-color:white;
-padding:15px;
-padding-bottom:120px;
-}
-
-body::before{
-content:'';
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(135deg,#d4af3720,#000000);
-z-index:-1;
-}
-
-.header{
-background:linear-gradient(145deg,#1f1f1f,#111);
-padding:25px 20px;
-border-radius:22px;
-text-align:center;
-border:1px solid #d4af37;
-box-shadow:0 0 25px rgba(212,175,55,0.25);
-margin-bottom:20px;
-}
-
-.logo{
-width:90px;
-height:90px;
-border-radius:50%;
-background:#d4af37;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:40px;
-margin:auto;
-margin-bottom:15px;
-color:black;
-font-weight:bold;
-}
-
-.header h1{
-font-size:30px;
-color:#d4af37;
-margin-bottom:8px;
-}
-
-.tagline{
-font-size:14px;
-color:#ccc;
-margin-bottom:15px;
-}
-
-.info{
-font-size:14px;
-line-height:26px;
-color:#eee;
-}
-
-.socials{
-display:flex;
-justify-content:center;
-gap:12px;
-margin-top:18px;
-flex-wrap:wrap;
-}
-
-.social-btn{
-background:#d4af37;
-color:black;
-padding:10px 18px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-font-size:14px;
-}
-
-.service-box{
-background:#1b1b1b;
-padding:18px;
-border-radius:20px;
-border:1px solid #2f2f2f;
-margin-bottom:20px;
-}
-
-.service-title{
-font-size:18px;
-font-weight:600;
-margin-bottom:15px;
-color:#d4af37;
-}
-
-.input-field{
-width:100%;
-padding:14px;
-border:none;
-border-radius:14px;
-background:#2a2a2a;
-margin-top:12px;
-color:white;
-font-size:15px;
-outline:none;
-}
-
-.type-box{
-display:flex;
-gap:10px;
-margin-top:15px;
-flex-wrap:wrap;
-}
-
-.type-btn{
-flex:1;
-padding:12px;
-background:#222;
-text-align:center;
-border-radius:14px;
-border:1px solid #444;
-cursor:pointer;
-}
-
-.type-btn.active{
-background:#d4af37;
-color:black;
-font-weight:600;
-}
-
-.main-category{
-background:linear-gradient(145deg,#d4af37,#f5d76e);
-color:black;
-padding:16px 18px;
-border-radius:18px;
-margin-top:15px;
-font-weight:700;
-display:flex;
-justify-content:space-between;
-align-items:center;
-cursor:pointer;
-font-size:16px;
-box-shadow:0 5px 12px rgba(212,175,55,0.2);
-}
-
-.category-content{
-display:none;
-background:#1a1a1a;
-padding:10px 15px;
-border-radius:18px;
-margin-top:8px;
-}
-
-.food-card{
-background:#232323;
-padding:15px;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-top:10px;
-gap:10px;
-}
-
-.food-left{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.food-icon{
-font-size:26px;
-}
-
-.food-name{
-font-size:15px;
-font-weight:500;
-}
-
-.food-price{
-color:#d4af37;
-font-size:14px;
-margin-top:4px;
-}
-
-.add-btn{
-background:#d4af37;
-color:black;
-border:none;
-padding:10px 15px;
-border-radius:12px;
-font-weight:700;
-cursor:pointer;
-}
-
-.cart-bar{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#121212;
-border-top:2px solid #d4af37;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 -5px 20px rgba(0,0,0,0.5);
-}
-
-.bill-box{
-font-size:17px;
-font-weight:700;
-}
-
-.bill-box span{
-color:#d4af37;
-}
-
-.order-btn{
-background:linear-gradient(145deg,#d4af37,#f5d76e);
-color:black;
-border:none;
-padding:13px 20px;
-border-radius:15px;
-font-size:15px;
-font-weight:700;
-cursor:pointer;
-}
-
-.cart-popup{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:90%;
-max-width:400px;
-background:#1a1a1a;
-padding:20px;
-border-radius:20px;
-border:1px solid #d4af37;
-display:none;
-z-index:1000;
-}
-
-.popup-title{
-font-size:22px;
-margin-bottom:15px;
-color:#d4af37;
-text-align:center;
-}
-
-.cart-item{
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid #333;
-}
-
-.close-btn{
-width:100%;
-margin-top:15px;
-padding:12px;
-border:none;
-background:#d4af37;
-color:black;
-border-radius:12px;
-font-weight:700;
-}
-
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:none;
-z-index:999;
-}
-
-</style>
-</head>
-<body>
-
-<div class="header">
-
-<div class="logo">🦚</div>
-
-<h1>MORPANKH</h1>
-
-<div class="tagline">
-Taste • Vibes • Quality
-</div>
-
-<div class="info">
-👑 Owner: Kishan Asopa<br>
-📞 7014808515 | 9928427598<br>
-📍 Karant Balaji Market, 1st Floor,<br>
-Girls School ke Samne, Napasar, Bikaner
-</div>
-
-<div class="socials">
-<a href="https://www.instagram.com/morpankh_cafe" target="_blank" class="social-btn">📸 Instagram</a>
-<a href="https://maps.google.com/?q=XH86+52G,+Napasar,+Rajasthan+334201" target="_blank" class="social-btn">📍 Location</a>
-</div>
-
-</div>
-
-<div class="service-box">
-
-<div class="service-title">
-📝 Customer Details
-</div>
-
-<input type="text" id="custName" class="input-field" placeholder="अपना नाम लिखें">
-
-<div class="type-box">
-<div class="type-btn active" onclick="setType('dine',this)">
-🍽️ Dine In
-</div>
-
-<div class="type-btn" onclick="setType('delivery',this)">
-🛵 Home Delivery
-</div>
-</div>
-
-<input type="text" id="dine" class="input-field" placeholder="टेबल नंबर लिखें">
-
-<input type="text" id="delivery" class="input-field" placeholder="पूरा पता लिखें" style="display:none;">
-
-</div>
-
-<div id="menu-container"></div>
-
-<div class="overlay" id="overlay"></div>
-
-<div class="cart-popup" id="cartPopup">
-<div class="popup-title">🛒 Your Cart</div>
-<div id="cartItems"></div>
-<button class="close-btn" onclick="closeCart()">Close</button>
-</div>
-
-<div class="cart-bar">
-
-<div class="bill-box">
-Total: ₹<span id="total">0</span>
-</div>
-
-<div style="display:flex; gap:10px;">
-<button class="order-btn" onclick="showCart()">
-Cart
-</button>
-
-<button class="order-btn" onclick="orderNow()">
-Order Now
-</button>
-</div>
-
-</div>
-
-<script>
-
-const menu={
-
-"🌯 Roll":{
-"Veg Roll":100,
-"Frankie Roll":120
-},
-
-"🥟 Momos":{
-"Steam Momos":100,
-"Fried Momos":120
-},
-
-"🥗 Chat":{
-"Kurkure Masala Chat":49,
-"Lesh Cocktail Bhel":79,
-"Chips Masala Kurkure Chat":89
-},
-
-"🍕 Pizza":{
-"Veg Pizza":170,
-"Onion Pizza":150,
-"Paneer Cheese Pizza":230,
-"Onion Capsicum Pizza":200,
-"Baby Corn Pizza":210,
-"Masala Pizza":200,
-"Tomato Pizza":190,
-"Morpankh Pizza":350,
-"Extra Cheese":70
-},
-
-"🍔 Burger":{
-"Veg Burger":50,
-"Paneer Cheese Burger":100,
-"Cheese Burger":80,
-"Masala Burger":70,
-"Double Tikki Burger":150
-},
-
-"🥪 Sandwich":{
-"Veg Sandwich":100,
-"Cheese Sandwich":120,
-"Paneer Cheese Sandwich":140,
-"Chocolate Sandwich":150,
-"Masala Sandwich":100,
-"Paneer Masala Cheese Sandwich":180,
-"Pizza Sandwich":180
-},
-
-"🍟 French Fries":{
-"French Fries Full":80,
-"French Fries Half":60,
-"Masala French Fries Full":120,
-"Masala French Fries Half":80
-},
-
-"🍞 Pav Bhaji":{
-"Masala Pav Bhaji":100,
-"Pav Bhaji":80,
-"Extra Pav":20,
-"Extra Bhaji":30
-},
-
-"🍜 Chowmein":{
-"Veg Chowmein":60,
-"Garlic Chowmein":80,
-"Schezwan Chowmein":90,
-"Paneer Chowmein":100,
-"Chowmein Manchurian":100,
-"Morpankh Chowmein":150
-},
-
-"🧆 Manchurian":{
-"Dry Manchurian":90,
-"Gravy Manchurian":110,
-"Paneer Manchurian":150,
-"Manchurian Chowmein":100
-},
-
-"🥞 Dosa":{
-"Masala Dosa":100,
-"Plain Dosa":80,
-"Paneer Masala Dosa":130,
-"Cheese Masala Dosa":140,
-"Pizza Dosa":200,
-"Sargam Dosa":250,
-"Morpankh Dosa":399
-}
-
-};
-
-let total=0;
-let cart={};
-let serviceType='dine';
-
-const container=document.getElementById('menu-container');
-
-for(let category in menu){
-
-let id=category.replace(/[^a-zA-Z0-9]/g,'');
-
-container.innerHTML+=`
-<div class="main-category" onclick="toggleMenu('${id}')">
-${category}
-<span>▼</span>
-</div>
-
-<div class="category-content" id="${id}"></div>
-`;
-
-for(let item in menu[category]){
-
-document.getElementById(id).innerHTML+=`
-
-<div class="food-card">
-
-<div class="food-left">
-<div class="food-icon">🍽️</div>
-
-<div>
-<div class="food-name">${item}</div>
-<div class="food-price">₹${menu[category][item]}</div>
-</div>
-</div>
-
-<button class="add-btn"
-onclick="addItem('${item}',${menu[category][item]})">
-ADD
-</button>
-
-</div>
-`;
-}
-}
-
-function toggleMenu(id){
-
-let box=document.getElementById(id);
-
-if(box.style.display==='block'){
-box.style.display='none';
-}else{
-box.style.display='block';
-}
-}
-
-function setType(type,element){
-
-serviceType=type;
-
-let buttons=document.querySelectorAll('.type-btn');
-buttons.forEach(btn=>btn.classList.remove('active'));
-
-element.classList.add('active');
-
-if(type==='dine'){
-document.getElementById('dine').style.display='block';
-document.getElementById('delivery').style.display='none';
-}else{
-document.getElementById('dine').style.display='none';
-document.getElementById('delivery').style.display='block';
-}
-}
-
-function addItem(name,price){
-
-if(cart[name]){
-cart[name].qty+=1;
-}else{
-cart[name]={qty:1,price:price};
-}
-
-total+=price;
-
-document.getElementById('total').innerText=total;
-}
-
-function showCart(){
-
-let cartBox=document.getElementById('cartItems');
-cartBox.innerHTML='';
-
-for(let item in cart){
-cartBox.innerHTML+=`
-<div class="cart-item">
-<span>${item} x ${cart[item].qty}</span>
-<span>₹${cart[item].qty*cart[item].price}</span>
-</div>
-`;
-}
-
-cartBox.innerHTML+=`
-<div style="margin-top:15px; font-weight:bold; text-align:right; color:#d4af37;">
-Total: ₹${total}
-</div>
-`;
-
-document.getElementById('cartPopup').style.display='block';
-document.getElementById('overlay').style.display='block';
-}
-
-function closeCart(){
-document.getElementById('cartPopup').style.display='none';
-document.getElementById('overlay').style.display='none';
-}
-
-function orderNow(){
-
-let name=document.getElementById('custName').value;
-
-if(name===''){
-alert('पहले अपना नाम लिखें');
-return;
-}
-
-let details='';
-
-if(serviceType==='dine'){
-details=document.getElementById('dine').value;
-}else{
-details=document.getElementById('delivery').value;
-}
-
-let msg=`*🦚 MORPANKH CAFE ORDER*\n\n`;
-
-msg+=`👤 Name: ${name}\n`;
-msg+=`📦 Service: ${serviceType}\n`;
-msg+=`📍 Details: ${details}\n\n`;
-
-msg+=`-------------------\n`;
-
-for(let item in cart){
-msg+=`${item} x ${cart[item].qty}\n`;
-}
-
-msg+=`-------------------\n`;
-msg+=`💰 Total Bill: ₹${total}`;
-
-window.open(
-'https://wa.me/917014808515?text='+encodeURIComponent(msg),
-'_blank'
-);
-}
-
-</script>
-
-</body>
-</html>
